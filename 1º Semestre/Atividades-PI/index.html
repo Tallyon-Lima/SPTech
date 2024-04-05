@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex-box</title>
+    <style>
+      .flex-item {
+    width: 100px;
+    height: 100px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+}
+
+.base {
+    margin-bottom: 15px;
+    background-color: #d0d3d4;
+    border-radius: 4px;
+}
+
+.box1 {
+    background-color: #63b1bc;
+}
+
+.box2 {
+    background-color: #1f2a44;
+}
+
+.box3 {
+    background-color: #ed145b;
+}
+
+.box4 {
+    background-color: #efb661;
+}
+
+h1 {
+    width: fit-content;
+    margin: auto;
+}
+
+/* Insira o código abaixo */
+
+.container1 {
+    justify-content:flex-start ;
+    display: flex;
+}
+
+.container2 {
+    justify-content: flex-end;
+    display: flex;
+}
+
+.container3 {
+   justify-content: center;
+   display: flex;
+}
+
+.container4 {
+    justify-content: space-between;
+    display: flex;
+}
+.container5 {
+    justify-content: space-around;
+    display: flex;
+}
+.container6 {
+    justify-content: space-evenly;
+    display: flex;
+}
+.container-exercicioB{
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column-reverse;
+}
+.container-desafio{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+}
+    </style>
+</head>
+
+<body>
+
+    <div class="base container1">
+        <div class="flex-item box1"><h1>1</h1></div>
+        <div class="flex-item box2"><h1>2</h1></div>
+        <div class="flex-item box3"><h1>3</h1></div>
+        <div class="flex-item box4"><h1>4</h1></div>
+    </div>
+    <div class="base container2">
+        <div class="flex-item box1"><h1>1</h1></div>
+        <div class="flex-item box2"><h1>2</h1></div>
+        <div class="flex-item box3"><h1>3</h1></div>
+        <div class="flex-item box4"><h1>4</h1></div>
+    </div>
+    <div class="base container3">
+        <div class="flex-item box1"><h1>1</h1></div>
+        <div class="flex-item box2"><h1>2</h1></div>
+        <div class="flex-item box3"><h1>3</h1></div>
+        <div class="flex-item box4"><h1>4</h1></div>
+    </div>
+    <div class="base container4">
+        <div class="flex-item box1"><h1>1</h1></div>
+        <div class="flex-item box2"><h1>2</h1></div>
+        <div class="flex-item box3"><h1>3</h1></div>
+        <div class="flex-item box4"><h1>4</h1></div>
+    </div>
+    <div class="base container5">
+        <div class="flex-item box1"><h1>1</h1></div>
+        <div class="flex-item box2"><h1>2</h1></div>
+        <div class="flex-item box3"><h1>3</h1></div>
+        <div class="flex-item box4"><h1>4</h1></div>
+    </div>
+    <div class="base container6">
+        <div class="flex-item box1"><h1>1</h1></div>
+        <div class="flex-item box2"><h1>2</h1></div>
+        <div class="flex-item box3"><h1>3</h1></div>
+        <div class="flex-item box4"><h1>4</h1></div>
+    </div>
+    <!-- Exercicio B -->
+    <div class="base container-exercicioB">
+          <div class="flex-item box1"><h1>1</h1></div>
+        <div class="flex-item box2"><h1>2</h1></div>
+        <div class="flex-item box3"><h1>3</h1></div>
+        <div class="flex-item box4"><h1>4</h1></div>
+    </div>
+    <!--Desafio -->
+    <div class="base container-desafio">
+          <div class="flex-item box1"><h1>1</h1></div>
+        <div class="flex-item box2"><h1>2</h1></div>
+        <div class="flex-item box3"><h1>3</h1></div>
+        <div class="flex-item box4"><h1>4</h1></div>
+    </div>
+</body>
+
+  </html>

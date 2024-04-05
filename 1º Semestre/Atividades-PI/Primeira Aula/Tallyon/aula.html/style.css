@@ -1,0 +1,25 @@
+
+        .card {
+            border: 3px solid black;
+            width: 50%;
+        }
+
+        .foto {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+
+        }
+
+        .nome {
+            color: black;
+            font-size: 25px;
+        }
+
+        .frase-lema {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+        }
+        .arredondamento{
+            border-radius: 30px;
+        }
