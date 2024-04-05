@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nota ENEM:
+    <input type="numb" id="input_enem"><br><br>
+    Nota do vestibular interno:
+    <input type="number" id="input_interno" ><br><br> 
+    <button onclick="Resultado()">Avalição</button><br><br>
+</body>
+</html>
+<script>
+    function Resultado(){
+    var enem =input_enem.value;
+    var interno = input_interno.value;
+    
+    
+
+    if( enem >= 800 || interno >= 700 ) {
+      alert (`Parabéns! Aprovado`);
+    }else {
+      alert (`Tente semestre que vem!`);
+    }
+
+
+}
+</script>

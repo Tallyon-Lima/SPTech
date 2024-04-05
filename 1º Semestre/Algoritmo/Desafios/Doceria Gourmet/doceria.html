@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+        Quantidade de macarons:
+    <input type="number" id="input_qtd_macaron"><br><br>
+    Preco dos macarons:
+    <input type="number" id="input_preco_macaron"><br><br>
+    Quantidade de brigadeiros:
+    <input type="number" id="input_qtd_brigadeiro"><br><br>
+    Preco dos brigadeiros:
+    <input type="number" id="input_preco_brigadeiro"><br><br>
+    Quantidade de Cupcake :
+    <input type="number" id="input_qtd_cupcake"><br><br>
+    Preco do Cupcake :
+    <input type="number" id="input_preco_cupcake"><br><br>
+    Quantidade Cheesecakes:
+    <input type="number" id="input_qtd_cheesecake"><br><br>
+    Preço do Cheesecakes:
+    <input type="number" id="input_preco_cheesecake"><br><br>
+    
+    <button onclick="Resultado()">Verificar Vendas</button><br><br>
+    
+    <div id="mostrar"></div>
+    
+    
+  </body>
+  </html>
+  <script>
+    function Resultado(){
+    var qtdMacaron = input_qtd_macaron.value;
+    var precoMacaron = input_preco_macaron.value;
+    var qtdBrigadeiro = input_qtd_brigadeiro.value;
+    var precoBrigadeiro = input_preco_brigadeiro.value;
+    var qtdCupcake = input_qtd_cupcake.value;
+    var precoCupcake = input_preco_cupcake.value;
+    var qtdCheesecake = input_qtd_cheesecake.value;
+    var precoCheesecake = input_preco_cheesecake.value;
+    var mostrarVenda = 1;
+    var imagemMacaron = `<img src="macarron.jpg" width="100px">`;
+    var imagemBrigadeiro = `<img src="brigadeiro.jpg" width="100px">`;
+    var imagemCupcake = `<img src="cupcake.jpg" width="100px">`;
+    var imagemCheesecake = `<img src="cheesecake.jpg" width="100px">`;
+
+    
+    mostrar.innerHTML = ""
+
+      
+    if(qtdMacaron== undefined || precoMacaron== undefined || qtdBrigadeiro== undefined || precoBrigadeiro== undefined || qtdCupcake== undefined ||  precoCupcake== undefined || qtdCheesecake == undefined|| precoCheesecake== undefined  ){
+      alert(`Preencha pelos todos os campos`);
+    }else if(qtdMacaron< 0|| precoMacaron<0 || qtdBrigadeiro< 0 || precoBrigadeiro< 0 || qtdCupcake< 0 || precoCupcake<0 || qtdCheesecake <0 || precoCheesecake<0 ){
+      alert(`Nenhum valor deve ser negativo`)
+    }else{
+      contadorTotal = 1;
+      qtdMacaron = Number(input_qtd_macaron.value);
+    precoMacaron = Number(input_preco_macaron.value);
+    qtdBrigadeiro = Number (input_qtd_brigadeiro.value);
+    precoBrigadeiro = Number(input_preco_brigadeiro.value);
+    qtdCupcake = Number(input_qtd_cupcake.value);
+    precoCupcake = Number(input_preco_cupcake.value);
+    qtdCheesecake = Number(input_qtd_cheesecake.value);
+    precoCheesecake = Number(input_preco_cheesecake.value);
+
+    if(qtdMacaron>0){
+      while(contadorTotal<= qtdMacaron){
+        mostrar.innerHTML += `${mostrarVenda} - ${imagemMacaron} - R$${precoMacaron} <br><br><br><br><br>`
+        contadorTotal ++;
+        mostrarVenda ++;
+      }
+    }
+
+
+      contadorTotal = 1;
+
+      if(qtdBrigadeiro>0){
+      while(contadorTotal <=qtdBrigadeiro){
+        mostrar.innerHTML += `${mostrarVenda} - ${imagemBrigadeiro} - R$${precoBrigadeiro} <br><br><br><br><br>`
+        contadorTotal ++;
+        mostrarVenda ++;
+      }
+    }
+      
+      contadorTotal = 1;
+
+      if(qtdCupcake>0){
+      while(contadorTotal <=qtdCupcake){
+        mostrar.innerHTML += `${mostrarVenda} - ${imagemCupcake} - R$${precoCupcake} <br><br><br><br><br>`
+        contadorTotal ++;
+        mostrarVenda ++;
+      }
+    }
+
+      
+      contadorTotal = 1;
+
+      if(qtdCheesecake>0){}
+      while(contadorTotal <=qtdCheesecake){
+        mostrar.innerHTML += `${mostrarVenda} - ${imagemCheesecake} - R$${precoCheesecake} <br><br><br><br><br>`
+        contadorTotal ++;
+        mostrarVenda ++;
+      }
+    }
+
+    var somaPreco = precoMacaron + precoBrigadeiro + precoCupcake + precoCheesecake;
+
+  mostrar.innerHTML += `Com a quantidade de ${qtdMacaron} Macarons, ${qtdBrigadeiro} Brigadeiros, ${qtdCupcake} Cupcakes e ${qtdCheesecake} Cheesecakes, a venda totalizará R$${somaPreco}`
+
+    }
+    
+
+
+</script>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nome da pessoa amada:
+    <input id="input_nome"><br><br>
+    Quanto você ama essa pessoa:
+    <input type="number" id="input_qtd"><br><br>
+     <button onclick="resultado()">Expressar amor</button>
+     <div id="div_mostrar"></div>
+</body>
+</html>
+<script>
+    function resultado(){
+    var contador = 0;
+    var nome= input_nome.value;
+    var qtd = Number(input_qtd.value);
+    
+    div_mostrar.innerHTML= "";
+    while(contador < qtd){
+        contador +=1;
+        div_mostrar.innerHTML += `${contador} - ${nome}, eu te amo!Sempre lembre disso!<br>`;
+    }
+    }
+</script>

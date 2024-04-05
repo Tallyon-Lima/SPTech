@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nome:<input type="text" id="input_nome"><br>
+    Idade:<input type="text" id="input_idade"><br>
+    Rua:<input type="text" id="input_rua"><br>
+    Número:<input type="text" id="input_numero"><br>
+    <button onclick="exibir()">Exibir Dados </button>
+    <div id="div_info"></div>
+</body>
+</html>
+
+<script>
+    function exibir(){
+        const nome = input_nome.value;
+        const idade = input_idade.value;
+        const rua = input_rua.value;
+        const numero =  input_numero.value;
+        var pessoa = {
+        nome,
+        idade,
+        endereco:{
+        rua,
+        numero,
+        }
+        }
+
+        // div_info.innerHTML = ``
+        
+        div_info.innerHTML = `Olá, ${pessoa.nome} <br>
+        Sua idade é ${pessoa.idade} <br>
+        Você mora na rua ${pessoa.endereco.rua} no número ${pessoa.endereco.numero}<br>`
+    }
+</script>

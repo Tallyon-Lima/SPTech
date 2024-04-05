@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div_mostrar">
+    Altura inicial:
+    <input type="number" id="input_inicial"><br><br>
+    Altura final:
+    <input type="number" id="input_final"><br><br>
+    <button onclick="Resultado()">Entrar</button><br><br>
+</div>
+</body>
+</html>
+<script>
+    var inicial= Number(0);
+    var final= Number(0); 
+    
+    function Resultado(){
+    inicial = input_inicial.value;
+    final = input_final.value;
+    
+    if(inicial>1 && final>inicial){
+        div_mostrar.innerHTML = `
+        Nome do cadidato a piloto: 
+        <input type="text" id="input_nome"><br><br>
+        Altura do candidato a piloto:
+        <input type="number" id="input_altura"><br><br>
+        <button onclick="Continuar()">Continuar</button><br><br>
+        `
+    } else{
+        alert('CUIDADO!! CONDIÇÕES NÃO FAVORAVEIS, NÃO SEGUIR EM FRENTE');
+    }
+
+}
+    function Continuar(){
+        var nome = input_nome.value;
+        var altura = Number(input_altura.value);
+
+        if(altura>= inicial && altura<=final){
+            div_mostrar.innerHTML+=`O candidato ${nome} com altura de ${altura} participará do processo de seleção de piloto<br>`;
+        }else{
+            div_mostrar.innerHTML+= `Infelizmente o candidato ${nome} com altura de ${altura} não atende os requisitos<br>`;
+        }
+    }
+</script>

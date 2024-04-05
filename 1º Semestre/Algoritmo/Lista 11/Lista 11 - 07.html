@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .azul{
+            color: blue;
+        }
+        .vermelho{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    Digite os filmes que você goste:
+    <input id="input_filme"><br><br>
+    <button onclick="Resultado()">Cadastrar</button>
+    <div id="mostrar"></div>
+</body>
+</html> 
+<script>
+    var listaFilmes = []
+
+    function Resultado(){
+        var filme = input_filme.value;
+        listaFilmes.push(filme)
+        mostrar.innerHTML = ``;
+for(var contador =0 ; contador < listaFilmes.length; contador++ )
+{    
+    if(contador%2 == 0){
+    mostrar.innerHTML += `<div class="vermelho">${listaFilmes[contador]} <br></div>`
+    }else {
+        mostrar.innerHTML += `<div class="azul">${listaFilmes[contador]} <br></div>`
+    }
+}
+    }
+</script>

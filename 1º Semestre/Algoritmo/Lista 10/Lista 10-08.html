@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite um número:
+    <input type="number" id="input_numero"><br><br>
+     <button onclick="resultado()">Viva o 7!</button>
+     <div id="div_mostrar"></div>
+</body>
+</html>
+<script>
+    function resultado(){
+    var contador = 0;
+    var n = Number(input_numero.value);
+    
+    div_mostrar.innerHTML= "";
+    if(n>=0 && n<=200){
+        while(contador <= n){
+            div_mostrar.innerHTML += `${contador}<br>`;
+            contador +=7;
+        }
+    }else{
+        div_mostrar.innerHTML += `Digite um numero entre 0 e 200<br>`;
+    }
+    div_mostrar.innerHTML +=`Numero digitado ${n}`
+    
+    }
+</script>

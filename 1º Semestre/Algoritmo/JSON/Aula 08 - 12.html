@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="exibir()">Exibir Dados </button>
+    <div id="div_info"></div>
+</body>
+</html>
+
+<script>
+    function exibir(){
+        // div_info.innerHTML = ``
+        var nome = `Tallyon`;
+        var idade = 29;
+        var rua = `São Pedro`
+        var numero = 85;
+
+        div_info.innerHTML = `Olá, ${nome} <br>
+        Sua idade é ${idade} <br>
+        Você mora na rua ${rua} no número ${numero}<br>`
+    }
+</script>

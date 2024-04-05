@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite o nome do aluno:
+    <input id="input_aluno"><br><br>
+    <button onclick="Resultado()">Cadastrar</button>
+    <div id="mostrar"></div>
+</body>
+</html> 
+<script>
+    var listaAlunos = []
+
+    function Resultado(){
+        var aluno = input_aluno.value;
+        listaAlunos.push(aluno);
+
+            mostrar.innerHTML = ``;
+        
+for(var contador = listaAlunos.length - 1; contador <= listaAlunos.length; contador-- )
+{   
+    if((contador+1) == 0){
+        break
+    }else{
+        mostrar.innerHTML += `${listaAlunos[contador]} <br>`
+    }
+}
+    }
+</script>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+       <button onclick="aumentar()">Aumentar a largura</button><button onclick="diminuir()">Reduzir a largura</button><br>
+       <img src="https://dtnetwork.com.br/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2022/07/image.png.webp" id="imagem">
+</body>
+</html>
+<script>
+        var imagem2 = 100;
+        function aumentar(){
+        imagem2 +=10;
+         imagem.style.width = `${imagem2}px`;
+    }
+    function diminuir(){
+        imagem2 -= 10;
+        imagem.style.width = `${imagem2}px`;
+    }
+</script>

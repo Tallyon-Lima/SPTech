@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite seu filme favorito:
+    <input id="input_filme"><br><br>
+    <button onclick="cadastrar()">Cadastrar Filme</button>
+    <div id="mostrar"></div>
+</body>
+</html>
+<script>
+ var favoritos = [];
+  function cadastrar() {
+    var filme = input_filme.value;
+    favoritos.push(filme);
+
+    mostrar.innerHTML = ""
+    mostrar.innerHTML = `Seu filme favorito: ${favoritos[0]}<br>`;
+        if (favoritos.length < 3){
+            mostrar.innerHTML += `Seu 3º filme favorito: Ainda não existe<br>
+            Total de filmes cadastrados: ${favoritos.length}`;
+    }else{
+        mostrar.innerHTML += `Seu 3º filme favorito: ${favoritos[2]}<br>
+        Total de filmes cadastrados: ${favoritos.length}`;
+    }
+  }
+</script>

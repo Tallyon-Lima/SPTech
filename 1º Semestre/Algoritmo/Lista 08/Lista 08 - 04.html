@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Tipo de pagamento:<br>
+    <select id="modo">
+      <option value="vazio">Selecione</option>
+      <option value="dinheiro">Dinheiro</option>
+      <option value="debito">Cartão de Débito</option>
+      <option value="credito"> Cartão De Crédito</option>
+      <option value="boleto"> Boleto </option>
+    </select>
+    <button onclick="Resultado()">Analisar Compra</button><br><br>
+    <div id="div_mostrar" ></div>
+</body>
+</html>
+<script>
+    function Resultado(){
+    var valor = modo.value;
+    
+    if (valor == 'vazio') {
+      div_mostrar.innerHTML = `Escolha uma opção de pagamento`;
+    }else if( valor == 'dinheiro' || valor == 'debito'){
+      div_mostrar.innerHTML = `Você terá que pagar a vista`;
+    } else {
+      div_mostrar.innerHTML = `Pagamento poderá ser parcelado`
+    }
+
+}
+</script>

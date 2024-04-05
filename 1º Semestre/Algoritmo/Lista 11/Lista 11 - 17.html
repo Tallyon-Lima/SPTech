@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parte01{
+            display: block;
+        }
+        .parte02{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="parte01" id="parte01">
+    <h1>Ánalise de Performance de Aluno - Registro</h1><br>
+    Entre com o nome do aluno: 
+    <input id="input_nome"><br><br>
+    Entre com a nota do aluno:
+    <input type="number" id="input_nota" > <br><br>
+    <button onclick="registro()">Registrar</button>
+    <button onclick="analisar()">Analisar</button>  
+    <div id="mostrar"></div>
+</div>
+<div class="parte02" id="parte02">
+    <h1>Ánalise de Performance de Aluno - Pesquisa</h1><br>
+    Entre com o intervalo de notas: <input id="input_de" type="number" placeholder="De:">
+    <input type="number"  id="input_para" placeholder="Para:">
+    <button onclick="pesquisar()">Pesquisar</button><br>
+    <div id="mostrar2"></div>
+</div>
+</body>
+</html>
+<script>
+
+    var listaNome = [];
+    var listaNota = [];
+
+    function registro(){
+        var nome = input_nome.value;
+        var nota = Number(input_nota.value);
+        mostrar.innerHTML = "";
+
+        if(nome == "" || nota < 0 || nota > 10){
+            
+            mostrar.innerHTML = `Preencha todos os dados corretamente`;
+        }else{
+            listaNome.push(nome);
+            listaNota.push(nota);
+        }
+    }
+
+    function analisar(){
+
+        parte01.style.display = 'none';
+        parte02.style.display = "block";
+    }
+
+    function pesquisar(){
+        var de = input_de.value;
+        var para = input_para.value;
+
+        if(de < 0 || de > 10 || para < 0 || para > 10 || para == de){
+            mostrar2.innerHTML = `Preencha com números entre 0 e 10 e os campos devem ser diferentes`
+        }else{
+
+            for(var contador = 0; contador < listaNota.length ; contador++){
+
+                if (listaNota[contador] >= de ) {
+                    mostrar2.innerHTML = `O aluno ${listaNome[contador]} `;
+                }
+            }
+        }
+    }
+</script>

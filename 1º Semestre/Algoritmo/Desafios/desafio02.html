@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="widthdevice-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="Resultado()">Clique em mim</button><br>
+    Cliques:<div id="div_mostrar">0</div><br>
+    <div id="menos"></div>
+</body>
+</html>
+<script>
+    function Resultado(){
+        var numero= Number(div_mostrar.innerHTML);
+        div_mostrar.innerHTML = numero +1; 
+        // numero +=  1;
+        // div_mostrar.innerHTML = `${numero}`
+        var menor = Number(menos.innerHTML);
+        menos.innerHTML = menor - 1;
+
+
+    }
+</script>

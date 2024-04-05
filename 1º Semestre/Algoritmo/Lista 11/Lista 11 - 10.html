@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Digite as linhas de ônibus que ele pegou durante a semana:
+    <input id="input_linha_semana"><br><br>
+    <button onclick="Resultado()">Gravar Busão </button><br><br>
+    <div id="mostrar"></div>
+    Digite aqui para saber se já pegou a linha:
+    <input id="input_consulta"><br><br>
+    <button onclick="consultar()">Pesquisar</button><br><br>
+    <div id="mostrar2"></div>
+</body>
+
+</html>
+<script>
+    var listaBusao = [];
+
+    function Resultado() {
+        var linhaSemana = input_linha_semana.value;
+
+        listaBusao.push(linhaSemana.toLowerCase());
+
+        mostrar.innerHTML = `<b>Lista de linha de Ônibus da semana</b><br>`
+        for (var contador = listaBusao.length - 1; contador <= listaBusao.length; contador--) {
+            if ((contador + 1) == 0) {
+                break
+            } else {
+                mostrar.innerHTML += `${listaBusao[contador]}<br>`
+            }
+        }
+    }
+
+    function consultar() {
+        var consulta = input_consulta.value;
+        var pegouOnibus = 0;
+        var frase = `Você nunca pegou essa linha`;
+        var OrdemBusao = [];
+
+        for (var cont2 = 1; cont2 <= listaBusao.length; cont2++) {
+
+            if (listaBusao[cont2 -1] == consulta) {
+                pegouOnibus++;
+                OrdemBusao.push(cont2);
+            }
+            if (pegouOnibus > 0) {
+                frase = `Você já pegou o ônibus ${pegouOnibus} vezes, nessa ordem: ${OrdemBusao}`
+
+            }
+            mostrar2.innerHTML = frase
+        }
+
+    }
+</script>

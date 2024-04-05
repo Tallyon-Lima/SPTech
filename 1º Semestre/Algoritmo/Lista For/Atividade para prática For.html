@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .botaoVermelho {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Quiosque Mirosmar - Controle de Vendas </h1><br>
+    <b>---------------Abertura do Quiosque-----------------</b><br><br>
+    Entre com a quantidade de Água engarrafada no estoque: <input type="number" id="input_qtd_agua"><br><br>
+    Entre com a quantidade de Coco fechado no estoque:
+    <input type="number" id="input_qtd_coco"><br><br>
+    <button onclick="validacaoQtd()">Abrir o Quiosque</button>
+    <br><br>
+    <div id="div_mostrar">
+        <b>------------------Estoque Inicial--------------------</b><br><br>
+        Água engarrafada:<br><br>
+        Coco fechado:<br><br>
+    </div>
+
+    <div id="div_mostrar2"></div><br><br>
+    <div id="div_mostrar3"></div>
+
+</body>
+
+</html>
+<script>
+    var qtdAgua = 0;
+    var qtdCoco = 0;
+    var qtdVendida = 0;
+    var subEstoqueC = 0;
+    var subEstoqueA = 0;
+    var vendaCoco = 0;
+    var vendaAgua = 0;
+    
+    function validacaoQtd() {
+        qtdAgua = Number(input_qtd_agua.value);
+        qtdCoco = Number(input_qtd_coco.value);
+        subEstoqueA = qtdAgua;
+        subEstoqueC = qtdCoco;
+
+        div_mostrar2.innerHTML = "";
+
+        alert(`${subEstoqueA}`);
+        alert(`${subEstoqueC}`);
+        if (qtdAgua < 100) {
+            div_mostrar2.innerHTML = `Com essa quantidade de Água engarrafada não dá para abrir o quiosque`;
+        } else if (qtdCoco < 200) {
+            div_mostrar2.innerHTML = `Com essa quantidade de Coco fechado não dá para abrir o quiosque`;
+        } else {
+            div_mostrar.innerHTML = `    <b>------------------Estoque Inicial--------------------</b><br><br>
+         Água engarrafada:<b>${qtdAgua}</b><br><br>
+         Coco fechado: <b>${qtdCoco}</b><br><br>
+         `
+            div_mostrar2.innerHTML += ` <br><b>----Registro das Operaçôes de Venda--------</b><br><br>
+         Entre com a quantidade vendida:<input type="number" id="input_qtd_vendida"> <br><br>
+         Informe o produto vendido:"
+         <select id="select">
+        <option value="coco">Coco fechado</option>
+        <option value="agua">Água fechado</option>
+        </select>
+    
+        <button onclick="Registro()">Registro a Venda</button><button onclick="Encerrar()" class="botaoVermelho">Encerrar o Turno</button><br><br>`
+
+            if (qtdAgua < 1000) {
+                div_mostrar2.innerHTML += `Engarrafe mais água de coco<br>`;
+            }if (qtdCoco < 2000) {
+                    div_mostrar2.innerHTML += `Compre mais cocos<br>`;
+                }
+        }
+    }
+    function Registro() {
+        qtdVendida = Number(input_qtd_vendida.value);
+        var produto = select.value;
+
+        if(qtdVendida > subEstoqueA || qtdVendida > subEstoqueC){
+            alert('A quantidade vendida nâo pode ser maior do que a quantidade inicial')
+        }else if (produto == 'coco') {
+            vendaCoco += qtdVendida;
+            subEstoqueC -= qtdVendida;
+            div_mostrar3.innerHTML += `Com a venda de ${qtdVendida} de Coco fechado o saldo no estoque é de ${subEstoqueC}<br>`;
+        } else {
+            vendaAgua += qtdVendida;
+            subEstoqueA -= qtdVendida;
+            div_mostrar3.innerHTML += `Com a venda de ${qtdVendida} de Água engarrafada o saldo no estoque é de ${subEstoqueA}<br>`;
+        }
+
+
+    }
+
+    function Encerrar(){
+        var porcentagemA = (qtdAgua *vendaAgua)/100;
+        var porcentagemC = (qtdCoco * vendaCoco)/ 100;
+
+        div_mostrar3.innerHTML = `Venda de Água engarrafada <br>
+        Saldo de produto no estoque: ${subEstoqueA}<br>
+        Quantidade de vendas: ${vendaAgua}<br>
+        Porcentagem das vendas: ${porcentagemA}<br><br>`
+
+        div_mostrar3.innerHTML += `Venda de Coco fechado <br>
+        Saldo de produto no estoque: ${subEstoqueC}<br>
+        Quantidade de vendas: ${vendaCoco}<br>
+        Porcentagem das vendas: ${porcentagemC}<br><br>`
+    }
+</script>

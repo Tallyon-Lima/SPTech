@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colisão</title>
+</head>
+<body>
+    Idade:
+    <input type="number" id="input_idade"><br><br>
+   Salário:
+    <input type="number" id="input_salario"><br><br>
+    <button onclick="Resultado()">Analisar a Situação</button><br><br>
+    <div id="div_mostrar"></div>
+</body>
+</html>
+<script>
+    function Resultado(){
+        var idade = Number(input_idade.value);
+        var salario = Number(input_salario.value);
+
+      if (idade < 18 && salario < 2500) {
+        div_mostrar.innerHTML = `Menor de idade e liso `;
+      } else if (idade < 18 && salario >= 2500)
+      {
+        div_mostrar.innerHTML = `Menor de idade e ostentação`;
+      } else if( idade >= 18 && salario < 3500) {
+        div_mostrar.innerHTML = `Maior de idade e liso` ;
+      } else if ( idade >= 18 && salario >= 3500 && salario <= 7000){
+        div_mostrar.innerHTML = ` Maior de idade e ostentação `;
+      } else {
+        div_mostrar.innerHTML = `Maior de idade e mega ostentação`;
+      }
+        }
+</script>

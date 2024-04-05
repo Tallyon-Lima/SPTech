@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nome:<input type="text" id="input_nome"><br>
+    telefone:<input type="text" id="input_telefone"><br>
+    
+    <button onclick="Cadastrar()">Cadastrar Contato </button>
+    <div id="div_info"></div>
+</body>
+</html>
+
+<script>
+    var contatos = [];
+
+    function Cadastrar(){
+        div_info= ""
+        const nome = input_nome.value;
+        const telefone = input_telefone.value;
+        
+        const contato = {
+        nome,
+        telefone
+        }
+
+        contatos.push(contato)
+        // div_info.innerHTML = ``
+        for (let i = 0; i < contatos.length; i++) {
+            const contatoAtual = contatos[i];
+            console.log(`${contatos}`)
+            div_info.innerHTML += `${contatoAtual.nome}/
+            ${contatoAtual.telefone}<br>`
+            
+        }
+    }
+</script>

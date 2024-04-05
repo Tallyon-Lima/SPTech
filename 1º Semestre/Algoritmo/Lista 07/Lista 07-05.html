@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nota do aluno:
+    <input type="number" id="input_aluno"><br><br>
+    <button onclick="Resultado()">Avaliar aluno</button><br><br>
+
+</body>
+</html>
+<script>
+    function Resultado(){
+    var aluno = Number (input_aluno.value);
+    if(aluno < 0){
+        alert('Digite uma nota válida');
+    }
+    else if(aluno<6){
+        alert('Aluno não aprovado');
+    }else if(aluno>=6 && aluno <8.5){
+        alert('Aluno comum e aprovado');
+    }else if(aluno >= 8.5 && aluno <=10){
+        alert('Aluno Exemplar');
+    }else{
+        alert('Digite uma nota válida');
+    }
+
+
+}
+</script>

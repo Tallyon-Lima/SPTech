@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Fruta: <input type="text" id="input_fruta"><br><br>
+    <button onclick="Resultado()">Adicionar Fruta</button><br><br>
+    <button onclick="exibir()">Exibir Lista</button><br><br>
+    <button onclick="subPrimeiro()">Substituir Primeiro</button>
+    <div id="mostrar"></div>
+</body>
+</html>
+<script>
+    var listaFruta = ['Maça', 'Banana']
+    function Resultado(){
+       var fruta = input_fruta.value;
+        listaFruta.push(fruta);    
+    }
+    
+    function exibir(){
+        // mostrar.innerHTML = listaFruta;        
+        // Colocar somente a primeira letra em maiusculo
+        //texto[0],toUpperCase() = texto.replace(texto[0],"")
+
+        for(var contador = 0; contador< listaFruta.length; contador++){
+        mostrar.innerHTML += `${listaFruta[contador]} <br>`
+        }
+    }
+  
+</script>

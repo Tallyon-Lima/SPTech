@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input id="input_frase">
+    <button onclick="Resultado()">Analisar</button>
+    <div id="mostrar"></div>
+</body>
+</html>
+<script>
+    function Resultado(){
+
+mostrar.innerHTML= ""
+    for(var contador = 0 ; contador < (input_frase.value).length; contador++){
+        mostrar.innerHTML += `${(input_frase.value) [contador]}<br>`;
+            }
+        }
+</script>

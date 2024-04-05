@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Exercício 2</h1>
+    Seu salário:
+    <input id="input_salario" type="number"><br><br>
+    <button onclick="Resultado()">Confirmar salário</button><br><br>
+    <div id="div_mostrar"></div>
+</body>
+</html>
+<script>
+var salario=0;
+    function Resultado(){
+        salario= Number(input_salario.value);
+
+        div_mostra.innerHTML=`Grana atual R$${salario}`;
+    }
+</script>

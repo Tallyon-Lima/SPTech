@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colisão</title>
+</head>
+<body>
+    Quantidade de passagens:
+    <input type="number" id="input_passagens"><br><br>
+    <button onclick="Resultado()">Comprar</button><br><br>
+    <div id="div_mostrar"></div>
+</body>
+</html>
+<script>
+    function Resultado(){
+        var passagens = Number(input_passagens.value);
+         var valor = 4.4 * passagens;
+         var desconto = Number(0);
+         
+         if(passagens >=8 && passagens <= 50){
+           if(passagens >=8 && passagens <=19){
+             desconto = valor - (valor*0.03);
+             div_mostrar.innerHTML = `${passagens}
+             passagens tem o valor total de ${desconto}`;
+           } else if (passagens >=20 && passagens <= 49){
+             desconto = valor - (valor * 0.05);
+             div_mostrar.innerHTML = `${passagens} passagens tem o valor total de ${desconto}`;
+           }else if (passagens =50){
+             desconto = valor - (valor * 0.07)
+             div_mostrar.innerHTML = `${passagens} passagens tem o valor total de ${desconto}`;          
+           }
+         }else {
+           div_mostrar.innerHTML = ` Quantidade inválida para Fidelidade! `
+         }
+        }
+</script>

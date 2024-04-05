@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h1> Calculadora de Cansaço do Aluno SPTech</h1>
+    Meio de transporte:<br>
+    <select id="modo">
+      <option value="vazio">Selecione</option>
+      <option value="onibus">Ônibus</option>
+      <option value="metro">Metrô</option>
+      <option value="carro"> Carro</option>
+      <option value="bicicleta"> Bicicleta </option>
+      <option value="lotacao" >Lotação</option>
+    </select>
+    <button onclick="Resultado()">Calcular Cansaço</button><br><br>
+</body>
+</html>
+<script> 
+    function Resultado(){
+    var valor = modo.value;
+    
+    if (valor == 'vazio') {
+      alert(`Escolha uma opção de transporte`);
+    }else if( valor == 'carro' || valor == 'bicicleta'){
+      alert(`Ta tranquilo..`);
+    } else if(valor =='metro'){
+      alert (`Um pouco cansado`) ;
+    } else if(valor == 'lotacao' || valor == 'onibus') {
+      alert(`Vish... vive cansado`);
+    }
+
+}
+</script>

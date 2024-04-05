@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Selecione o resultado do jogo:
+    <select id="sele_resultado">
+        <option value="nada">Indique o resultado</option>
+        <option value="Vitoria">Vitoria</option>
+        <option value="Empate">Empate</option>
+        <option value="Derrota">Derrota</option>
+    </select><br><br>
+    <button onclick="calcular()">Registrar jogo</button><br><br>
+    Indique qual jogo deseja saber o resultado:
+    <input id="input_pesquisa" oninput="Fpesquisa()"><br><br>
+    <div id="mostrar"></div>
+    <div id="mostrar2"></div>
+</body>
+
+</html>
+<script>
+    var listaResultado = []
+
+    function calcular() {
+        var resultado = sele_resultado.value;
+
+        if (resultado == 'nada') {
+            alert('Escolha um resultado valido')
+        } else {
+            if (resultado == 'Vitoria') {
+                listaResultado.push('Vitoria');
+            } else if (resultado == 'Empate') {
+                listaResultado.push('Empate');
+            } else {
+                listaResultado.push('Derrota');
+            }
+            var vitoria = 0;
+            var empate = 0;
+            var derrota = 0;
+            var pontos = 0;
+
+            for (var contador = 0; contador < listaResultado.length; contador++) {
+
+                if (listaResultado[contador] == 'Vitoria') {
+                    vitoria++;
+                    pontos += 3;
+                } else if (listaResultado[contador] == 'Empate') {
+                    empate++;
+                    pontos++;
+                } else {
+                    derrota++;
+                }
+            }
+
+            var possiveisPontos = listaResultado.length * 3;
+            var aproveitamento = (pontos / possiveisPontos) * 100;
+
+            mostrar.innerHTML = ` O time teve: ${vitoria} vitórias, ${empate} empates, ${derrota} derrotas<br>
+Pontuação total: ${pontos} pontos <br>
+Aproveitamento: ${aproveitamento}% `;
+        }
+    }
+
+    function Fpesquisa() {
+        var pesquisa = input_pesquisa.value;
+        var frase = `  Não foi cadastrado um ${pesquisa}º jogo`
+
+
+        if ((pesquisa - 1) < 0) {
+            frase = "";
+        } else if ((pesquisa - 1) > listaResultado.length) {
+            mostrar2.innerHTML = frase
+        } else {
+            if (listaResultado[pesquisa - 1] == 'Vitoria') {
+                frase = `No ${pesquisa}º jogo, o time Ganhou`
+            } else if (listaResultado[pesquisa - 1] == 'Empate') {
+                frase = `No ${pesquisa}º jogo, o time Empatou`
+            } else {
+                frase = `No ${pesquisa}º jogo, o time Perdeu`
+            }
+        }
+
+
+        mostrar2.innerHTML = frase
+    }
+
+</script>

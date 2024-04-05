@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Pesquise uma fruta
+    <input id="input_fruta"><br><br>
+    <button onclick="Resultado()">
+        Pesquisar</button><br><br>
+    <div id="mostrar"></div>
+</body>
+
+</html>
+<script>
+    var listaFrutas = ["maçã", "banana", "laranja", "melancia", "pera"];
+
+    function Resultado() {
+        var fruta = input_fruta.value.toLowerCase();
+        mostrar.innerHTML = ""
+        var temFruta = 0;
+
+        for (var contador = 0; contador < listaFrutas.length; contador++) {
+            if (listaFrutas[contador] == fruta) {
+                temFruta = 1
+            }
+            if (temFruta == 1) {
+                mostrar.innerHTML = `A fruta ${fruta} existe na lista`
+            } else {
+                mostrar.innerHTML = `Não existe a fruta ${fruta} na lista<br>`
+            }
+        }
+    }
+</script>

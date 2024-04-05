@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite um número:
+    <input type="number" id="input_numero"><br><br>
+    Uma Frase:
+    <input id="input_frase"><br><br>
+     <button onclick="resultado()">Papagaio</button>
+</body>
+</html>
+<script>
+    function resultado(){
+    var contador = 2;
+    var frase = input_frase.value;
+    var n = Number(input_numero.value);
+    
+        while(contador <= n){
+            contador +=1;
+            alert(`${frase}`);
+    
+    }
+    
+    }
+</script>

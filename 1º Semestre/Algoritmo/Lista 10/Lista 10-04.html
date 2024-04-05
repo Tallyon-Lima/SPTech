@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <button onclick="resultado()">S2 Pares</button>
+     <div id="div_mostrar"></div>
+</body>
+</html>
+<script>
+    function resultado(){
+    var contador = 0;
+     div_mostrar.innerHTML= "";
+
+     while(contador <=100 ){
+         div_mostrar.innerHTML += `${contador}<br>`
+         contador += 2;
+     }
+    }
+</script>

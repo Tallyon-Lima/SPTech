@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nota do aluno:
+    <input type="number" id="input_aluno"><br><br>
+    <button onclick="Resultado()">Avaliar aluno</button><br><br>
+    <div id="div_mostrar"></div>
+</body>
+</html>
+<script>
+    function Resultado(){
+    var aluno = Number (input_aluno.value);
+
+    if(aluno >= 0 && aluno <=10){
+        div_mostrar.innerHTML = `Nota válida!`
+    }else{
+        div_mostrar.innerHTML = `Onde já se viu nota menor que 0 e maior que 10?`
+    }
+}
+</script>

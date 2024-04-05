@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Renda própria:
+    <input type="number" id="input_propria"><br><br>
+    Renda total familiar:
+    <input type="number" id="input_familiar"><br><br>
+    <button onclick="Resultado()">Veriicar ajuda</button>
+</body>
+</html>
+<script>
+    function Resultado(){
+    var propria = Number (input_propria.value);
+    var familiar = Number (input_familiar.value);
+
+    if(propria <= 1050 && familiar <=2100){
+        alert('Você terá direito');
+    }else{
+        alert('Você NÃO terá direito');
+    }
+}
+</script>

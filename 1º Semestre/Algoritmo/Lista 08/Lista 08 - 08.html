@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+  <h1>Teste de Estágio</h1>
+    Nome da Empresa:
+    <input id="input_nome"><br><br>
+    Valor da bolsa:
+    <input id="input_bolsa"><br><br>
+    Valor do VR:
+    <input id="input_vr" type="number"><br><br>
+    Tempo de deslocamento da empresa para SPTech (em minutos):
+    <input id="input_tempo" type="number"><br><br>
+    
+    <button onclick="Resultado()">É preferida? </button>
+    <div id="div_mostrar"></div>
+</body>
+</html>
+<script>
+function Resultado(){
+ var nome = input_nome.value;
+ var bolsa = Number (input_bolsa.value) ;
+ var vr = Number (input_vr.value);
+ var tempo = Number(input_tempo.value);
+ 
+ if (bolsa >= 1800 || vr >= 20 || tempo <= 30){
+   div_mostrar.innerHTML = `A empresa ${nome} é uma de sua preferência`;
+ } else{
+   div_mostrar.innerHTML = `A empresa ${nome} está fora da sua lista` 
+ }
+}
+</script>
